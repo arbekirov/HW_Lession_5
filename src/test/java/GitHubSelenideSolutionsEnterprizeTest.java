@@ -17,11 +17,14 @@ public class GitHubSelenideSolutionsEnterprizeTest {
         Configuration.timeout = 5000; // default 4000;
 }
     @Test
-    void gitHubPageSearch() {
+    void gitHubPageSearchTest() {
         //открыть страницу github
         open("/dashboard");
         //навести курсор на поле хедера Solutions
         $("ul.d-lg-flex.list-style-none").$(Selectors.byText("Solutions")).hover();
-        $("href='/enterprise'").click();
+        //выбрать элемент с атрибутом href с значением enterprise и кликнуть на него
+        $("[href='/enterprise']").click();
+        //проверить что в заголовке страницы есть запись The AI-powered developer platform.
+        $("#hero-section-brand-heading").shouldHave(text("The AI-powered developer platform."));
     }
 }
