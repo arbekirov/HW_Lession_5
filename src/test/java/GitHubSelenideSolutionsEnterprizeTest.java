@@ -21,7 +21,7 @@ public class GitHubSelenideSolutionsEnterprizeTest {
         //открыть страницу github
         open("/dashboard");
         //навести курсор на поле хедера Solutions
-        $("ul.d-lg-flex list-style-none li").$(Selectors.byText("Solutions"))
-                .closest(".border-bottom pb-3 mb-3").$("ul li").hover();
+        $("ul.d-lg-flex.list-style-none").$(Selectors.byText("Solutions")).hover();
+        $("href='/enterprise'").click();
     }
 }
